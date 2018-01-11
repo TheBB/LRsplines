@@ -67,7 +67,6 @@ SET(INCLUDES ${PROJECT_SOURCE_DIR}/include ${CMAKE_BINARY_DIR}/include)
 
 # Optional packages
 FIND_PACKAGE(Boost)
-FIND_PACKAGE(GoTools)
 
 set(LRSpline_DEFINITIONS)
 IF(GoTools_FOUND)
