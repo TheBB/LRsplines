@@ -19,7 +19,7 @@ void LRSpline::generateIDs() const {
 		element_[i]->setId(i);
 }
 
-void LRSpline::getEdgeFunctions(std::vector<Basisfunction*> &edgeFunctions, parameterEdge edge, int depth) const {
+LRSPLINE_API void LRSpline::getEdgeFunctions(std::vector<Basisfunction*> &edgeFunctions, parameterEdge edge, int depth) const {
 	edgeFunctions.clear();
 	bool trivariate = (**basis_.begin()).nVariate() == 3;
 	for(Basisfunction *b : basis_) {

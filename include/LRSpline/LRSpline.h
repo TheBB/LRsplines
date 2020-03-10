@@ -1,6 +1,16 @@
 #ifndef LRSPLINE_H
 #define LRSPLINE_H
 
+#ifdef WINDOWS
+#ifdef LRSPLINE_COMPILING_EXPORT
+#define LRSPLINE_API __declspec(dllexport)
+#else
+#define LRSPLINE_API __declspec(dllimport)
+#endif
+#else
+#define LRSPLINE_API
+#endif
+
 #include "HashSet.h"
 #include "Streamable.h"
 #include <vector>
@@ -72,7 +82,7 @@ public:
 
 
 	// more funky get methods
-	void getEdgeFunctions(std::vector<Basisfunction*> &edgeFunctions, parameterEdge edge, int depth=1) const;
+	LRSPLINE_API void getEdgeFunctions(std::vector<Basisfunction*> &edgeFunctions, parameterEdge edge, int depth=1) const;
 	void getEdgeElements( std::vector<Element*>       &edgeElements,  parameterEdge edge             ) const;
 	virtual void getBezierElement(   int iEl, std::vector<double> &controlPoints) const = 0;
 	virtual void getBezierExtraction(int iEl, std::vector<double> &extractMatrix) const = 0;
