@@ -792,7 +792,7 @@ void LRSplineVolume::refineBasisFunction(const std::vector<int> &indices) {
 		insert_line(m);
 
 	/* do a posteriori fixes to ensure a proper mesh */
-	// aPosterioriFixes();
+	aPosterioriFixes();
 
 }
 
